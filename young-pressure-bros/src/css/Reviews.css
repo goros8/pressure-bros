@@ -1,0 +1,46 @@
+#reviews, h2 {
+    margin: 0 5%;
+}
+
+#write {
+    display: flex;
+    justify-content: center;
+}
+
+#response {
+    margin-right: 30px;
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+    height: 400px;
+}
+
+#response input {
+    height: 100px; /* Reduced height for better UX */
+    width: 200px;
+    padding: 5px; /* Added padding */
+}
+
+#response h1 {
+    font-weight: bold;
+}
+
+button {
+    margin: 5px;
+    width: 150px;
+    height: 30px;
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+@media only screen and (min-width: 600px) {
+
+    .columns {
+        display: flex;
+    }
+    .review-seven {
+        flex: 7;
+    }
+    .review-one {
+        flex: 2;
+    }
+}

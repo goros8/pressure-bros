@@ -1,0 +1,53 @@
+/* Main container styling */
+#main-div {
+    padding: 10px;
+    margin: 0 auto; /* Centers the container */
+    max-width: 80%; /* Limits the width to 80% of the viewport */
+    background-color: lightgrey;
+    overflow: auto;
+}
+
+/* Header styling */
+h6 {
+    font-size: 1.25rem; /* Using rem for better scaling and readability */
+    margin: 0; /* Removes default margin */
+}
+
+/* Input field styling */
+input, select {
+    height: 30px;
+    border-radius: 10px;
+    padding: 0 10px; /* Adds padding inside input/select */
+    font-size: 1rem; /* Ensures text inside input/select is readable */
+    width: 100%; /* Makes inputs take full width of their parent */
+    box-sizing: border-box; /* Prevents overflow due to padding */
+}
+
+/* Payment method header styling */
+#payment-method h6 {
+    margin-bottom: 15px; /* Adds a bit more spacing */
+}
+
+/* Map container styling */
+#map {
+    width: 100%; /* Ensures responsiveness */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* Address styling */
+#address {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Centers text in the address field */
+}
+
+/* Additional responsive improvements */
+@media (max-width: 768px) {
+    #main-div {
+        margin: 0 5%; /* Reduces margin for smaller screens */
+    }
+
+    input, select {
+        width: 100%; /* Ensures full width on mobile */
+    }
+}

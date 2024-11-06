@@ -1,0 +1,67 @@
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.left img {
+    width: 100%;
+    height: 100%;
+}
+.left div {
+    height:100%;
+    background-color: rgb(70, 188, 228);
+    padding: 10px;
+}
+.left p {
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+    padding: 10px 20px;
+    text-align: center;
+}
+.right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.three{
+    flex:3;
+}
+.seven{
+    flex:7;
+}
+.right img {
+    width: 100%;
+    height: 100%;
+}
+.right div {
+    background-color: rgb(39, 171, 242);
+    padding: 10px;
+    height:100%;
+}
+.right p {
+    top: auto;
+    bottom: auto;
+    left: 15px;
+    color: white;
+    font-size: 36px;
+    padding: 10px 20px;
+    text-align: center;
+}
+.left:hover {
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.9);
+}
+.right:hover{
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.9);
+}

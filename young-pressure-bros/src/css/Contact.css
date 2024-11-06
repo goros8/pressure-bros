@@ -1,0 +1,15 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+footer button {
+    height: 75px;
+    width: 200px;
+    color: aliceblue;
+    background-color: blue;
+    text-align: center;
+    font-size: 26px;
+    border-radius: 15px;
+}

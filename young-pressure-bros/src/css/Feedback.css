@@ -1,0 +1,50 @@
+#customer-review {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#customer-review h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-style: italic;
+    color: #555;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.customer-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-name {
+    margin: 0;
+    font-weight: bold;
+}
+
+.verified {
+    margin: 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.rating {
+    margin-top: 15px;
+}
+
+.rating p {
+    font-weight: bold;
+}

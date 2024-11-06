@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #7891EB;
+
+}
+.hidden{
+    display: none;
+}
+.one{
+    background-color: rgb(5, 103, 136);
+    padding:10px;
+    color:beige;
+    margin: 20px;
+    border-radius: 15px;
+}
+body h1 {
+    text-align: center;
+    font-size: 48px;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+footer button {
+    height: 75px;
+    width: 200px;
+    color: aliceblue;
+    background-color: blue;
+    text-align: center;
+    font-size: 26px;
+    border-radius: 15px;
+}
+h6 {
+    font-size: 20px;
+    margin:10px 0 ;
+}
+input {
+    height: 30px;
+    border-radius: 10px;
+}
+select {
+    height: 30px;
+}
+#payment-method h6 {
+    margin-bottom: 10px;
+
+}
+
+#mission{
+    text-align: center;
+    color: grey;
+    background-color: beige;
+    border: 2px solid black;
+    margin-left: 20%;
+    margin-right:20%;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:70%;
+}
+h4{
+    text-align: center;
+    font-size: 46;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+    .columns {
+        display: flex;
+    }
+    .one {
+        flex: 1;
+    }
+    #main-div {
+        padding: 10px;
+        margin-left: 10%;
+        background-color: lightgrey;
+        margin-right: 10%;
+    }
+    h2 {
+        margin-left: 10%;
+    }
+}
