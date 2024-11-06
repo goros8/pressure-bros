@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/young-pressure-bros/static/css/main.253be96d.css",
+    "main.js": "/young-pressure-bros/static/js/main.6ce38b84.js",
+    "static/media/nicco.JPG": "/young-pressure-bros/static/media/nicco.352a417f7a7f096e4cb9.JPG",
+    "static/media/kai.JPG": "/young-pressure-bros/static/media/kai.90abc40a15e8d8066ee4.JPG",
+    "static/media/house.JPG": "/young-pressure-bros/static/media/house.83863243206fa92dd766.JPG",
+    "static/media/goodSidewalk.webp": "/young-pressure-bros/static/media/goodSidewalk.f7cdc54b50f5ef2e52c4.webp",
+    "static/media/webHouse.webp": "/young-pressure-bros/static/media/webHouse.ec8bbcd0359fcd01e365.webp",
+    "static/media/gooddeck.jpg": "/young-pressure-bros/static/media/gooddeck.58c080e95a67cc618e09.jpg",
+    "static/media/deck.jpg": "/young-pressure-bros/static/media/deck.c1a3af3b398f4f2ecb33.jpg",
+    "static/media/sidewalk.jpg": "/young-pressure-bros/static/media/sidewalk.d4dac4dc44d2c2023f18.jpg",
+    "index.html": "/young-pressure-bros/index.html",
+    "main.253be96d.css.map": "/young-pressure-bros/static/css/main.253be96d.css.map",
+    "main.6ce38b84.js.map": "/young-pressure-bros/static/js/main.6ce38b84.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.253be96d.css",
+    "static/js/main.6ce38b84.js"
+  ]
+}
