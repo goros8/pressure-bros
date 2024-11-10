@@ -7,8 +7,6 @@ const Reviews = ()=>{
         <div className="columns">
             <div className="review-seven">
         <Feedback/>
-        <Feedback/>
-        <Feedback/>
         </div>
         <div id="write" className="review-one">
                 <div id="response">

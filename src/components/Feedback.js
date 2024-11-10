@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css"; // Import the custom styles
+import "../css/Feedback.css"; // Import the custom styles
 
 const Feedback = () => {
   const [reviews, setReviews] = useState([]);
