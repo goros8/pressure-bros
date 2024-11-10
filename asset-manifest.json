@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pressure-bros/static/css/main.95c692c2.css",
-    "main.js": "/pressure-bros/static/js/main.330bc244.js",
+    "main.css": "/pressure-bros/static/css/main.b83e6db9.css",
+    "main.js": "/pressure-bros/static/js/main.57bf9c1e.js",
     "static/media/nicco.JPG": "/pressure-bros/static/media/nicco.352a417f7a7f096e4cb9.JPG",
     "static/media/kai.JPG": "/pressure-bros/static/media/kai.90abc40a15e8d8066ee4.JPG",
     "static/media/house.JPG": "/pressure-bros/static/media/house.83863243206fa92dd766.JPG",
@@ -11,11 +11,11 @@
     "static/media/deck.jpg": "/pressure-bros/static/media/deck.c1a3af3b398f4f2ecb33.jpg",
     "static/media/sidewalk.jpg": "/pressure-bros/static/media/sidewalk.d4dac4dc44d2c2023f18.jpg",
     "index.html": "/pressure-bros/index.html",
-    "main.95c692c2.css.map": "/pressure-bros/static/css/main.95c692c2.css.map",
-    "main.330bc244.js.map": "/pressure-bros/static/js/main.330bc244.js.map"
+    "main.b83e6db9.css.map": "/pressure-bros/static/css/main.b83e6db9.css.map",
+    "main.57bf9c1e.js.map": "/pressure-bros/static/js/main.57bf9c1e.js.map"
   },
   "entrypoints": [
-    "static/css/main.95c692c2.css",
-    "static/js/main.330bc244.js"
+    "static/css/main.b83e6db9.css",
+    "static/js/main.57bf9c1e.js"
   ]
 }
