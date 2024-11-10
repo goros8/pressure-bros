@@ -1,50 +1,63 @@
-#customer-review {
-    border: 1px solid #ddd;
+/* Feedback Component Styles */
+.feedback-container {
     padding: 20px;
     background-color: #f9f9f9;
-    max-width: 500px;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#customer-review h3 {
-    font-size: 1.5rem;
+.feedback-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
     color: #333;
-    margin-bottom: 10px;
 }
 
-.review-text {
-    font-style: italic;
+.feedback-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feedback-item {
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s;
+}
+
+.feedback-item:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-user,
+.feedback-date,
+.feedback-rating,
+.feedback-review {
+    margin: 5px 0;
+}
+
+.feedback-user {
+    font-weight: bold;
+    color: #333;
+}
+
+.feedback-date {
+    font-size: 14px;
+    color: #777;
+}
+
+.feedback-rating {
+    font-size: 16px;
+    color: #f5c518;
+}
+
+.feedback-review {
+    font-size: 16px;
     color: #555;
-}
-
-.customer-info {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
-
-.customer-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.customer-name {
-    margin: 0;
-    font-weight: bold;
-}
-
-.verified {
-    margin: 0;
-    color: #888;
-    font-size: 0.9rem;
-}
-
-.rating {
-    margin-top: 15px;
-}
-
-.rating p {
-    font-weight: bold;
+    line-height: 1.5;
 }
