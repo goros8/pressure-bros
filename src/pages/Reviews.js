@@ -1,4 +1,5 @@
 import Feedback from "../components/Feedback";
+import Response from "../components/Response";
 import "../css/Reviews.css";
 const Reviews = ()=>{
     return(
@@ -8,13 +9,8 @@ const Reviews = ()=>{
             <div className="review-seven">
         <Feedback/>
         </div>
-        <div id="write" className="review-one">
-                <div id="response">
-                    <h2>Leave a Review!</h2>
-                    <h3>Satisfaction Level:</h3>
-                    <input type="text" placeholder="Let us know how we did!"/>
-                    <button>Submit</button>
-                </div>
+        <div className="review-one">
+            <Response/>
         </div>
         </div>
         

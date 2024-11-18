@@ -1,44 +1,39 @@
-import Deck from "../images/deck.jpg";
-import Fence from "../images/fence.jpg";
-import House from "../images/house.JPG";
-import Sidewalk from "../images/sidewalk.jpg";
+import React from "react";
+import "../css/GalleryStyles.css";
+import DeckImage1 from "../images/deck.jpg";
+import FenceImage1 from "../images/fence.jpg";
+import FenceImage2 from "../images/fencelong.webp";
+import DeckImage2 from "../images/gooddeck.jpg";
+import SidewalkImage2 from "../images/goodSidewalk.webp";
+import HouseImage1 from "../images/house.JPG";
+import HouseImage2 from "../images/house2.jpg";
+import SidewalkImage1 from "../images/sidewalk.jpg";
+import CategorySlideshow from "./CategorySlideshow";
 
-const Slideshow =()=>{
-    return(
-        <div id="main-div">
-            <div class="columns">
-                <div class="one">
-                    <h2>Sidewalks/Driveways</h2>
-                    <div class="slideshow">
-                        <img src={Sidewalk} class="slideshow-img" alt="Sidewalk" />
-                        <img src="../youngbros/pressure-washing/side.JPG" class="slideshow-img hidden" alt="Driveway" />
-                    </div>
-                </div>
-                <div class="one">
-                    <h2>Houses</h2>
-                    <div class="slideshow">
-                        <img src={House} class="slideshow-img" alt="House1" />
-                        <img src="../youngbros/pressure-washing/two.JPG" class="slideshow-img hidden" alt="House2" />
-                    </div>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="one">
-                    <h2>Fences</h2>
-                    <div class="slideshow">
-                        <img src={Fence} class="slideshow-img" alt="Fence" />
-                        <img src="../youngbros/generic-pics/fencelong.webp" class="slideshow-img hidden" alt="Fence 2" />
-                    </div>
-                </div>
-                <div class="one">
-                    <h2>Decks/Patios</h2>
-                    <div class="slideshow">
-                        <img src={Deck} class="slideshow-img" alt="Deck" />
-                        <img src="../youngbros/generic-pics/gooddeck.jpg" class="slideshow-img hidden" alt="Patio" />
-                    </div>
-                </div>
+const Slideshow = () => {
+    return (
+        <div id="gallery-main-div">
+            <h1>Gallery</h1>
+            <div id="gallery-columns">
+                <CategorySlideshow
+                    title="Sidewalks/Driveways"
+                    images={[SidewalkImage1, SidewalkImage2]}
+                />
+                <CategorySlideshow
+                    title="Houses"
+                    images={[HouseImage1, HouseImage2]}
+                />
+                <CategorySlideshow
+                    title="Fences"
+                    images={[FenceImage1, FenceImage2]}
+                />
+                <CategorySlideshow
+                    title="Decks/Patios"
+                    images={[DeckImage1, DeckImage2]}
+                />
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default Slideshow;
