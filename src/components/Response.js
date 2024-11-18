@@ -29,14 +29,13 @@ const Response = () => {
         const reviewData = { ...review, date };
 
         try {
-            const response = await fetch('/api/reviews', {
+            const response = await fetch('http://localhost:3000/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(reviewData),
             });
-
             const result = await response.json();
 
             if (response.ok) {
