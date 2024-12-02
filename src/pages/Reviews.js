@@ -1,10 +1,9 @@
-import Feedback from "../components/Feedback";
-import Response from "../components/Response";
+import Parent from "../components/Parent";
 import "../css/Reviews.css";
 const Reviews = ()=>{
     return(
         <>
-        <h1>Customer Testimonials</h1>
+        {/* <h1>Customer Testimonials</h1>
         <div className="columns">
             <div className="review-seven">
         <Feedback/>
@@ -12,9 +11,9 @@ const Reviews = ()=>{
         <div className="review-one">
             <Response/>
         </div>
-        </div>
+        </div> */}
         
-        
+        <Parent/>
         </>
         
 

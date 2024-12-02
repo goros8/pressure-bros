@@ -1,46 +1,70 @@
-#reviews, h2 {
-    margin: 0 5%;
+/* Container for reviews */
+#reviews-container {
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+.three{
+  flex:2;
+}
+#reviews-container h2 {
+  text-align: center;
+  color: #333;
 }
 
-#write {
-    display: flex;
-    justify-content: center;
+#reviews-container .reviews-list {
+  list-style-type: none;
+  padding: 0;
 }
 
-#response {
-    margin-right: 30px;
-    background-color: lightgray;
-    padding: 10px;
-    text-align: center;
-    height: 400px;
+#reviews-container .reviews-list li {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+#blank{
+  margin-inline-start: 20px;}
+#reviews-container .reviews-list li p {
+  margin: 5px 0;
 }
 
-#response input {
-    height: 100px; /* Reduced height for better UX */
-    width: 200px;
-    padding: 5px; /* Added padding */
+#reviews-container .reviews-list li strong {
+  color: #007acc;
 }
 
-#response h1 {
-    font-weight: bold;
+#reviews-container .reviews-list li .review-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-button {
-    margin: 5px;
-    width: 150px;
-    height: 30px;
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+#reviews-container .reviews-list li .review-buttons button {
+  background-color: #007acc;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+ul{
+  margin: 16px;
+  padding:0;
+}
+#reviews-container .reviews-list li .review-buttons button.delete {
+  background-color: #d9534f;
+}
+
+#reviews-container .reviews-list li .review-buttons button:hover {
+  opacity: 0.8;
 }
 @media only screen and (min-width: 600px) {
 
-    .columns {
-        display: flex;
-    }
-    .review-seven {
-        flex: 7;
-    }
-    .review-one {
-        flex: 2;
-    }
+#reviews-container{
+  display: flex;
+}
+
 }

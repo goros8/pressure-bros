@@ -1,0 +1,73 @@
+/* General styling for modals */
+#edit-review-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  #edit-review-modal .modal-header {
+    background-color: #007acc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #edit-review-modal .modal-content {
+    padding: 15px;
+  }
+  
+  #edit-review-modal form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #edit-review-modal form input,
+  #edit-review-modal form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  #edit-review-modal form button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  #edit-review-modal form button:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Close button */
+  #edit-review-modal .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  #edit-review-modal .modal-close:hover {
+    color: #ccc;
+  }
+  
