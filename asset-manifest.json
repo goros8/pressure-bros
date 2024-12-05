@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pressure-bros/static/css/main.89dcbc05.css",
-    "main.js": "/pressure-bros/static/js/main.9d1087c9.js",
+    "main.js": "/pressure-bros/static/js/main.671428bc.js",
     "static/media/nicco.JPG": "/pressure-bros/static/media/nicco.352a417f7a7f096e4cb9.JPG",
     "static/media/kai.JPG": "/pressure-bros/static/media/kai.90abc40a15e8d8066ee4.JPG",
     "static/media/house.JPG": "/pressure-bros/static/media/house.83863243206fa92dd766.JPG",
@@ -14,10 +14,10 @@
     "static/media/sidewalk.jpg": "/pressure-bros/static/media/sidewalk.d4dac4dc44d2c2023f18.jpg",
     "index.html": "/pressure-bros/index.html",
     "main.89dcbc05.css.map": "/pressure-bros/static/css/main.89dcbc05.css.map",
-    "main.9d1087c9.js.map": "/pressure-bros/static/js/main.9d1087c9.js.map"
+    "main.671428bc.js.map": "/pressure-bros/static/js/main.671428bc.js.map"
   },
   "entrypoints": [
     "static/css/main.89dcbc05.css",
-    "static/js/main.9d1087c9.js"
+    "static/js/main.671428bc.js"
   ]
 }
