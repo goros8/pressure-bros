@@ -2,18 +2,24 @@ import React, { useState } from "react";
 import "../css/EditReviewDialog.css";
 
 const EditReviewDialog = ({ review, id, onSave }) => {
-  const [inputs, setInputs] = useState({ ...review });
+  const [inputs, setInputs] = useState({
+    ...review,
+    date: review?.date || new Date().toLocaleDateString(), // Ensure date field is set
+  });
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setInputs((prev) => ({ ...prev, [name]: value }));
+    setInputs((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(inputs);
-    setIsOpen(false);
+    onSave(inputs); // Pass the updated review to the parent component
+    setIsOpen(false); // Close the dialog after saving
   };
 
   return (
@@ -60,7 +66,22 @@ const EditReviewDialog = ({ review, id, onSave }) => {
                   required
                 />
               </label>
-              <button type="submit">Save</button>
+              {/* Date field displayed but non-editable */}
+              <label>
+                Date:
+                <input
+                  type="text"
+                  name="date"
+                  value={inputs.date}
+                  readOnly
+                />
+              </label>
+              <div className="modal-actions">
+                <button type="submit">Save</button>
+                <button type="button" onClick={() => setIsOpen(false)}>
+                  Cancel
+                </button>
+              </div>
             </form>
           </div>
         </div>
