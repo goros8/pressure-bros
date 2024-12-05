@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/EditReviewDialog.css";
 
-const EditReviewDialog = ({ review, id, onSave }) => {
+const EditReviewDialog = ({ review, onSave }) => {
   const [inputs, setInputs] = useState({
     ...review,
     date: new Date().toLocaleDateString(), // Set the date to the current date by default
@@ -71,7 +71,6 @@ const EditReviewDialog = ({ review, id, onSave }) => {
                   required
                 />
               </label>
-              {/* Date field is removed from input since it's automatically set */}
               <div className="modal-actions">
                 <button type="submit">Save</button>
                 <button type="button" onClick={() => setIsOpen(false)}>

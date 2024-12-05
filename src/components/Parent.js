@@ -49,7 +49,7 @@ const Parent = () => {
       const response = await fetch(`https://backend-pressure-bros.onrender.com/api/reviews/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedReview),
+        body: JSON.stringify(updatedReview),  // Send the updated review
       });
 
       if (!response.ok) throw new Error("Failed to update review");
@@ -57,7 +57,7 @@ const Parent = () => {
       const updatedReviewData = await response.json();
       setReviews((prevReviews) =>
         prevReviews.map((review) =>
-          review._id === updatedReviewData._id ? updatedReviewData : review
+          review._id === updatedReviewData._id ? updatedReviewData : review  // Update the correct review in the state
         )
       );
       setMessage("Review updated successfully!");
@@ -88,36 +88,34 @@ const Parent = () => {
       <div className="three">
         <h2>Customer Reviews</h2>
         <div className="reviews-list">
-  {reviews?.length === 0 ? (
-    <p id="blank">No reviews yet. Be the first to leave one!</p>
-  ) : (
-    <ul>
-      {reviews?.map((review) => (
-        <li key={review._id}>
-          <p>
-            <strong>{review.name}</strong> ({review.date})
-          </p>
-          <p>Rating: {review.stars} stars</p>
-          <p>{review.feedback}</p>
-          <div className="review-buttons">
-            <button
-              className="delete"
-              onClick={() => deleteReview(review._id)}
-            >
-              Delete
-            </button>
-            <EditReviewDialog
-              review={review}
-              id={review._id}
-              onSave={(updatedReview) => editReview(review._id, updatedReview)}
-            />
-          </div>
-        </li>
-      ))}
-    </ul>
-  )}
-</div>
-
+          {reviews?.length === 0 ? (
+            <p id="blank">No reviews yet. Be the first to leave one!</p>
+          ) : (
+            <ul>
+              {reviews?.map((review) => (
+                <li key={review._id}>
+                  <p>
+                    <strong>{review.name}</strong> ({review.date})
+                  </p>
+                  <p>Rating: {review.stars} stars</p>
+                  <p>{review.feedback}</p>
+                  <div className="review-buttons">
+                    <button
+                      className="delete"
+                      onClick={() => deleteReview(review._id)}
+                    >
+                      Delete
+                    </button>
+                    <EditReviewDialog
+                      review={review}
+                      onSave={(updatedReview) => editReview(review._id, updatedReview)}  // Pass the updated review to the editReview function
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
       <div className="one">
         <Response onAddReview={onAddReview} />
