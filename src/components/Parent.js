@@ -16,7 +16,7 @@ const Parent = () => {
         }
         const data = await response.json();
         console.log("Fetched reviews:", data); // Debug API response
-        setReviews(data.reviews); // Adjust for nested property
+        setReviews(data); // Directly using data instead of nested property
       } catch (error) {
         console.error("Error fetching reviews:", error);
         setMessage("Error fetching reviews: " + error.message);
@@ -35,8 +35,8 @@ const Parent = () => {
 
       if (!response.ok) throw new Error("Failed to submit review");
 
-      const updatedReviews = await response.json();
-      setReviews(updatedReviews.reviews); // Adjust for nested property
+      const addedReview = await response.json();
+      setReviews((prevReviews) => [...prevReviews, addedReview]); // Add to the current list of reviews
       setMessage("Review submitted successfully!");
     } catch (error) {
       console.error("Error submitting review:", error);
@@ -54,8 +54,12 @@ const Parent = () => {
 
       if (!response.ok) throw new Error("Failed to update review");
 
-      const updatedReviews = await response.json();
-      setReviews(updatedReviews.reviews); // Adjust for nested property
+      const updatedReviewData = await response.json();
+      setReviews((prevReviews) =>
+        prevReviews.map((review) =>
+          review._id === updatedReviewData._id ? updatedReviewData : review
+        )
+      );
       setMessage("Review updated successfully!");
     } catch (error) {
       console.error("Error updating review:", error);
@@ -71,8 +75,7 @@ const Parent = () => {
 
       if (!response.ok) throw new Error("Failed to delete review");
 
-      const updatedReviews = await response.json();
-      setReviews(updatedReviews.reviews); // Adjust for nested property
+      setReviews((prevReviews) => prevReviews.filter((review) => review._id !== id));
       setMessage("Review deleted successfully!");
     } catch (error) {
       console.error("Error deleting review:", error);
