@@ -88,35 +88,36 @@ const Parent = () => {
       <div className="three">
         <h2>Customer Reviews</h2>
         <div className="reviews-list">
-          {reviews.length === 0 ? (
-            <p id="blank">No reviews yet. Be the first to leave one!</p>
-          ) : (
-            <ul>
-              {reviews.map((review) => (
-                <li key={review._id}>
-                  <p>
-                    <strong>{review.name}</strong> ({review.date})
-                  </p>
-                  <p>Rating: {review.stars} stars</p>
-                  <p>{review.feedback}</p>
-                  <div className="review-buttons">
-                    <button
-                      className="delete"
-                      onClick={() => deleteReview(review._id)} // Use MongoDB _id
-                    >
-                      Delete
-                    </button>
-                    <EditReviewDialog
-                      review={review}
-                      id={review._id}
-                      onSave={(updatedReview) => editReview(review._id, updatedReview)} // Use MongoDB _id
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+  {reviews?.length === 0 ? (
+    <p id="blank">No reviews yet. Be the first to leave one!</p>
+  ) : (
+    <ul>
+      {reviews?.map((review) => (
+        <li key={review._id}>
+          <p>
+            <strong>{review.name}</strong> ({review.date})
+          </p>
+          <p>Rating: {review.stars} stars</p>
+          <p>{review.feedback}</p>
+          <div className="review-buttons">
+            <button
+              className="delete"
+              onClick={() => deleteReview(review._id)}
+            >
+              Delete
+            </button>
+            <EditReviewDialog
+              review={review}
+              id={review._id}
+              onSave={(updatedReview) => editReview(review._id, updatedReview)}
+            />
+          </div>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
+
       </div>
       <div className="one">
         <Response onAddReview={onAddReview} />
