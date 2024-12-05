@@ -9,7 +9,7 @@ const Parent = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/reviews");
+        const response = await fetch("https://backend-pressure-bros.onrender.com/api/reviews");
         if (!response.ok) {
           throw new Error("Failed to fetch reviews");
         }
@@ -25,7 +25,7 @@ const Parent = () => {
 
   const onAddReview = async (newReview) => {
     try {
-      const response = await fetch("http://localhost:3000/api/reviews", {
+      const response = await fetch("https://backend-pressure-bros.onrender.com/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newReview),
@@ -44,7 +44,7 @@ const Parent = () => {
 
   const editReview = async (id, updatedReview) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/reviews/${id}`, {
+      const response = await fetch(`https://backend-pressure-bros.onrender.com/api/reviews/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedReview),
@@ -63,7 +63,7 @@ const Parent = () => {
 
   const deleteReview = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/reviews/${id}`, {
+      const response = await fetch(`https://backend-pressure-bros.onrender.com/api/reviews/${id}`, {
         method: "DELETE",
       });
 
