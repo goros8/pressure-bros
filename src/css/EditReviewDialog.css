@@ -70,4 +70,6 @@
   #edit-review-modal .modal-close:hover {
     color: #ccc;
   }
-  
+  button{
+    margin: 5px;
+  }
