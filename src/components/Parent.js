@@ -45,19 +45,28 @@ const Parent = () => {
   };
 
   const editReview = async (id, updatedReview) => {
+    // Remove _id and __v from the updatedReview object before sending the PUT request
+    const { _id, __v, ...reviewDataWithoutIdAndV } = updatedReview;
+  
+    console.log("Updated review data (without _id and __v):", reviewDataWithoutIdAndV); // Log the data being sent
+  
     try {
       const response = await fetch(`https://backend-pressure-bros.onrender.com/api/reviews/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedReview),  // Send the updated review
+        body: JSON.stringify(reviewDataWithoutIdAndV),  // Send the review data without _id and __v
       });
-
-      if (!response.ok) throw new Error("Failed to update review");
-
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Error response:", errorData);  // Log error response for more details
+        throw new Error("Failed to update review");
+      }
+  
       const updatedReviewData = await response.json();
       setReviews((prevReviews) =>
         prevReviews.map((review) =>
-          review._id === updatedReviewData._id ? updatedReviewData : review  // Update the correct review in the state
+          review._id === updatedReviewData._id ? updatedReviewData : review
         )
       );
       setMessage("Review updated successfully!");
@@ -66,7 +75,7 @@ const Parent = () => {
       setMessage("Error updating review: " + error.message);
     }
   };
-
+  
   const deleteReview = async (id) => {
     try {
       const response = await fetch(`https://backend-pressure-bros.onrender.com/api/reviews/${id}`, {
@@ -108,7 +117,8 @@ const Parent = () => {
                     </button>
                     <EditReviewDialog
                       review={review}
-                      onSave={(updatedReview) => editReview(review._id, updatedReview)}  // Pass the updated review to the editReview function
+                      id={review._id}
+                      onSave={(updatedReview) => editReview(review._id, updatedReview)}
                     />
                   </div>
                 </li>
