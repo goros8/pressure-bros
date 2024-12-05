@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Reviews.css";
 import EditReviewDialog from "./EditReviewDialog";
 import Response from "./Response";
+
 const Parent = () => {
   const [reviews, setReviews] = useState([]);
   const [message, setMessage] = useState("");
@@ -14,7 +15,8 @@ const Parent = () => {
           throw new Error("Failed to fetch reviews");
         }
         const data = await response.json();
-        setReviews(data);
+        console.log("Fetched reviews:", data); // Debug API response
+        setReviews(data.reviews); // Adjust for nested property
       } catch (error) {
         console.error("Error fetching reviews:", error);
         setMessage("Error fetching reviews: " + error.message);
@@ -34,7 +36,7 @@ const Parent = () => {
       if (!response.ok) throw new Error("Failed to submit review");
 
       const updatedReviews = await response.json();
-      setReviews(updatedReviews);
+      setReviews(updatedReviews.reviews); // Adjust for nested property
       setMessage("Review submitted successfully!");
     } catch (error) {
       console.error("Error submitting review:", error);
@@ -53,7 +55,7 @@ const Parent = () => {
       if (!response.ok) throw new Error("Failed to update review");
 
       const updatedReviews = await response.json();
-      setReviews(updatedReviews);
+      setReviews(updatedReviews.reviews); // Adjust for nested property
       setMessage("Review updated successfully!");
     } catch (error) {
       console.error("Error updating review:", error);
@@ -70,7 +72,7 @@ const Parent = () => {
       if (!response.ok) throw new Error("Failed to delete review");
 
       const updatedReviews = await response.json();
-      setReviews(updatedReviews);
+      setReviews(updatedReviews.reviews); // Adjust for nested property
       setMessage("Review deleted successfully!");
     } catch (error) {
       console.error("Error deleting review:", error);
@@ -81,39 +83,37 @@ const Parent = () => {
   return (
     <div id="reviews-container">
       <div className="three">
-          <h2>Customer Reviews</h2>
-          <div className="reviews-list">
-            {reviews.length === 0 ? (
-              <p id="blank">No reviews yet. Be the first to leave one!</p>
-            ) : (
-              <ul>
-                {reviews.map((review, index) => (
-                  <li key={index}>
-                    <p>
-                      <strong>{review.name}</strong> ({review.date})
-                    </p>
-                    <p>Rating: {review.stars} stars</p>
-                    <p>{review.feedback}</p>
-                    <div className="review-buttons">
-                      <button
-                        className="delete"
-                        onClick={() => deleteReview(index)}
-                      >
-                        Delete
-                      </button>
-                      <EditReviewDialog
-                        review={review}
-                        id={index}
-                        onSave={(updatedReview) =>
-                          editReview(index, updatedReview)
-                        }
-                      />
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+        <h2>Customer Reviews</h2>
+        <div className="reviews-list">
+          {reviews.length === 0 ? (
+            <p id="blank">No reviews yet. Be the first to leave one!</p>
+          ) : (
+            <ul>
+              {reviews.map((review) => (
+                <li key={review._id}>
+                  <p>
+                    <strong>{review.name}</strong> ({review.date})
+                  </p>
+                  <p>Rating: {review.stars} stars</p>
+                  <p>{review.feedback}</p>
+                  <div className="review-buttons">
+                    <button
+                      className="delete"
+                      onClick={() => deleteReview(review._id)} // Use MongoDB _id
+                    >
+                      Delete
+                    </button>
+                    <EditReviewDialog
+                      review={review}
+                      id={review._id}
+                      onSave={(updatedReview) => editReview(review._id, updatedReview)} // Use MongoDB _id
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
       <div className="one">
         <Response onAddReview={onAddReview} />
